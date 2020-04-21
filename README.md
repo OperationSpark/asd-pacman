@@ -18,14 +18,20 @@ rm -rf asd-pacman/.git
 
 # Helpful jQuery methods:
 ```js
+// referencing existing/new HTML elements
 var $element = $("#id");                // references an existing element
 var $element = $("<elementType>");      // creates a new element. don't forget the "<>"!
 
+// adding/removing HTML elements to/from other HTML elements
 $element.appendTo($otherElement)        // inserts $element as a child of $otherElement
 $element.detach()                       // removes the $element from its parent
 
-$element.css("left", 100);              // sets the CSS "left" property value for $element to 100
-$element.css("top", 50);                // sets the CSS "top" property value for $element to 50
+// styling HTML elements
+$element.css("left", 100);              // draws the $element 100 pixels from the left of the screen (x = 100)
+$element.css("top", 50);                // draws the $element 50 pixels from the top of the screen (y = 50)
+$element.css("background-color", "red") // sets the background color of $element to "red"
+
+// setting attributes to HTML elements
 $element.addClass("myClass");           // sets the class attribute value for $element to "myClass"
 $element.attr("id", "abc")              // sets the id attribute value for $element to "abc"
 $element.attr("src", "img/file.png");   // sets the src attribute value for $element to "img/file.png"
