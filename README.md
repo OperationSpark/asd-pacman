@@ -1,12 +1,11 @@
 # asd-pacman
 Building Pacman for the Advanced Software Development course using the ASD template
 
-# Setup:
+# To clone this template:
 
-1) Fork (make a copy of) this repository by pressing the **Fork** button in the top right corner. Select your own account to copy the repository to.
+Enter these commands into your bash terminal to clone the repository and delete the `.git/` folder:
 
-2) After the repository has been forked, click on the green **Copy or download** button on the right side of the repository page. Copy the github repository URL and enter this command into your bash terminal:
-
-```
-git clone [delete the brackets and paste your copied URL here]
+```bash
+git clone https://github.com/operationspark/asd-pacman.git
+rm -rf asd-pacman/.git
 ```
