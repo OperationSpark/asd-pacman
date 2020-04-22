@@ -73,3 +73,28 @@ Use the HTML templates below to help you create the various kinds of square elem
 ```
 
 **NOTE**: Observe that **pacman** and the **red ghost** are not appended inside a `.square` element. Instead, they will be appended to the `$board` and move _above_ the maze.
+
+# Pacman Pseudocode
+
+```
+Determine where Pacman should move to next
+
+IF the next location is a wall:
+  don't move pacman
+ELSE:
+  move and redraw pacman
+
+IF pacman is in the same location as a pellet:
+  "eat" the pellet by removing it from the screen
+  increase the score 
+  
+IF pacman is in the same location as a ghost:
+  end the game!
+```
+
+# Ghost Pseudocode
+
+```
+Determine where the ghost should move to (it should never be a wall)
+Move and redraw the ghost
+```
