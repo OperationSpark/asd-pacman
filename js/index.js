@@ -1,4 +1,4 @@
-/* global $, sessionStorage*/
+/* global $, sessionStorage, getLevel */
 
 $(document).ready(function(){
   ////////////////////////////////////////////////////////////////////////////////
