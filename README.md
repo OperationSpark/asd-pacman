@@ -45,7 +45,7 @@ While the `getLevel` function may exist in a different file, `index.js` can stil
 
 Notice, however, that in the `index.html` file, `js/level.js` file is loaded _before_ `js/index.js`. This allows the `getLevel` function to be loaded into memory before `index.js` attempts to use it.
 
-## Your first task will be to create a helper function in `js/index.js` called `createMaze()` that renders the maze using the 2D array returned from `getLevel()`**. 
+**Your first task** is to create a helper function in `js/index.js` called `createMaze()` that renders the maze using the 2D array returned from `getLevel()`. 
 
 Follow the pseudocode below to help create the `createMaze()` function:
 
