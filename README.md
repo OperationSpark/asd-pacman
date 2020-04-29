@@ -62,7 +62,7 @@ FOR each row in the level:
 
 - The 2D array will represent the level through a number system. `0` represents a square with a pellet inside, `1` represents a wall, and so on... 
 
-- Every  number in the 2D array requires that you create a `<div class='square'>` HTML element for that location and position that element in the correct coordinates based on its row and column position.
+- Every  number in the 2D array requires that you create a `<div class='square'>` HTML element for that location and position that element in the correct coordinates based on its row and column position. **Each element is appended directly to the `$board`**
 
 - In addition, each `.square` element needs to have a unique `id` attribute assigned to it that follows the format: `r#c#` where the `#`s are replaced by the row and column position of that square in the 2D array. 
 
