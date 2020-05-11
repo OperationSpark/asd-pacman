@@ -110,10 +110,3 @@ IF pacman is in the same location as a pellet:
 IF pacman is in the same location as a ghost:
   end the game!
 ```
-
-# Ghost Pseudocode
-
-```
-Determine where the ghost should move to (it should never be a wall)
-Move and redraw the ghost
-```
