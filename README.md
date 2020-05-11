@@ -39,13 +39,32 @@ $element.attr("src", "img/file.png");   // sets the src attribute value for $ele
 
 # The Maze
 
-The data that represents the maze for Pacman is stored in the file `js/levels.js`. This file has a function, `getLevel(level)`, that accepts a String (such as "level1") which is used to return the 2D Array that represents various levels. While there is currently only one level, it would be easy to add more.
+The data that represents the maze for Pacman is stored in the file `js/levels.js`. This file has a function, `getLevel(level)`, that accepts a String (such as "level1") which is used to return the 2D Array that represents various levels. While there is currently only one level, it would be easy to add more. 
 
-Your first task will be to create a helper function in `js/index.js` called `createMaze(level)` that first gets the 2D Array from `js/levels.js` and then, using nested `for` loops, generates the HTML elements for the level. Since the `js/levels.js` file is in the same folder as `js/index.js`, the `getLevel(level)` function may be called from anywhere inside `js/index.js`. Notice, however, that in the `index.html` the `level.js` file is loaded _before_ `index.js`. 
+While the `getLevel` function may exist in a different file, `index.js` can still use it because they share the same _root folder_ `js`. Therefore, `getLevel(level)` may be called from anywhere inside `index.js` (or other files that may exist in the `js` folder. 
 
-The 2D array will represent the level through a number system. `0` represents a square with a pellet inside, `1` represents a wall, and so on... Every single number in the 2D array requires that you create a `<div class='square'>` HTML element for that location and position that element in the correct coordinates based on its row and column position.
+Notice, however, that in the `index.html` file, `js/level.js` file is loaded _before_ `js/index.js`. This allows the `getLevel` function to be loaded into memory before `index.js` attempts to use it.
 
-In addition, each `.square` element needs to have a unique `id` attribute assigned to it that follows the format: `r#c#` where the `#`s are replaced by the row and column position of that square in the 2D array. 
+**Your first task** is to create a helper function in `js/index.js` called `createMaze()` that renders the maze using the 2D array returned from `getLevel()`. 
+
+Follow the pseudocode below to help create the `createMaze()` function:
+
+```
+store the 2D array returned from getLevel() in the global level variable 
+
+FOR each row in the level:
+  FOR each column in the each row of the level:
+    genereate an HTML element with the class "square"
+    draw the new element in the correct row/column coordinate
+    give the new element a unique id in the formate "r#c#"
+    Depending on the value of the row/column in the level, manipulate the square further
+```
+
+- The 2D array will represent the level through a number system. `0` represents a square with a pellet inside, `1` represents a wall, and so on... 
+
+- Every  number in the 2D array requires that you create a `<div class='square'>` HTML element for that location and position that element in the correct coordinates based on its row and column position. **Each element is appended directly to the `$board`**
+
+- In addition, each `.square` element needs to have a unique `id` attribute assigned to it that follows the format: `r#c#` where the `#`s are replaced by the row and column position of that square in the 2D array. 
 
 Use the HTML templates below to help you create the various kinds of square elements that exist in the maze:
 
@@ -73,3 +92,28 @@ Use the HTML templates below to help you create the various kinds of square elem
 ```
 
 **NOTE**: Observe that **pacman** and the **red ghost** are not appended inside a `.square` element. Instead, they will be appended to the `$board` and move _above_ the maze.
+
+# Pacman Pseudocode
+
+```
+Determine where Pacman should move to next
+
+IF the next location is a wall:
+  don't move pacman
+ELSE:
+  move and redraw pacman
+
+IF pacman is in the same location as a pellet:
+  "eat" the pellet by removing it from the screen
+  increase the score 
+  
+IF pacman is in the same location as a ghost:
+  end the game!
+```
+
+# Ghost Pseudocode
+
+```
+Determine where the ghost should move to (it should never be a wall)
+Move and redraw the ghost
+```
