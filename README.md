@@ -55,17 +55,19 @@ store the 2D array returned from getLevel() in the global level variable
 
 FOR each row in the level:
   FOR each column in the each row of the level:
-    genereate an HTML element with the class "square"
-    draw the new element in the correct row/column coordinate
+    genereate a new <div> HTML element with the class "square"
+    position the new element in the correct row/column coordinate
     give the new element a unique id in the formate "r#c#"
     Depending on the value of the row/column in the level, manipulate the square further
 ```
 
 - The 2D array will represent the level through a number system. `0` represents a square with a pellet inside, `1` represents a wall, and so on... 
 
-- Every  number in the 2D array requires that you create a `<div class='square'>` HTML element for that location and position that element in the correct coordinates based on its row and column position. **Each element is appended directly to the `$board`**
+- Every  number in the 2D array requires that you create a `<div class='square'>` HTML element which must be positioned in the correct coordinates based on its row and column. **Each `.square` element is appended directly to the `#board`**
 
 - In addition, each `.square` element needs to have a unique `id` attribute assigned to it that follows the format: `r#c#` where the `#`s are replaced by the row and column position of that square in the 2D array. 
+
+- Pellets, Pacman, and the Ghost require an additional `<div>` element to be created. Pellets will be _nested inside_ the square that they occupy. Pacman and the Ghosts do not belong to any specific square - instead they will also be appended directly to the `#board` and move _on top of_ the maze squares (setting the `z-index` CSS property to a high number ensures that pacman and the ghost will appear above any other HTML element).
 
 Use the HTML templates below to help you create the various kinds of square elements that exist in the maze:
 
@@ -89,10 +91,7 @@ Use the HTML templates below to help you create the various kinds of square elem
 
 <!-- 3: red ghost -->
 <img id='redGhost' src="img/redGhost.png"></div>
-
 ```
-
-**NOTE**: Observe that **pacman** and the **red ghost** are not appended inside a `.square` element. Instead, they will be appended to the `$board` and move _above_ the maze.
 
 # Pacman Pseudocode
 
