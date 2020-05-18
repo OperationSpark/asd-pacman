@@ -25,6 +25,7 @@ var $element = $("<elementType>");      // creates a new element. don't forget t
 // adding/removing HTML elements to/from other HTML elements
 $element.appendTo($otherElement)        // inserts $element as a child of $otherElement
 $element.detach()                       // removes the $element from its parent
+$element.emtpy()                        // removes all children elements from $element
 
 // styling HTML elements
 $element.css("left", 100);              // draws the $element 100 pixels from the left of the screen (x = 100)
