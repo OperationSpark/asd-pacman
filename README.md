@@ -1,6 +1,8 @@
 # asd-pacman
 Building Pacman for the Advanced Software Development course using the ASD template
 
+Try it out here: https://benspector3.github.io/projects/pacman/ (right click --> open in new tab)
+
 # To clone this template:
 
 Enter these commands into your bash terminal to clone the repository and delete the `.git/` folder:
